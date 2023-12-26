@@ -1,4 +1,4 @@
-# Project Title: Named Entity Recognition on CoNLL Dataset
+# Project: Named Entity Recognition on CoNLL Dataset
 
 This project is a Python-based implementation of a Bi-directional Long Short Term Memory (BLSTM) model for Named Entity Recognition (NER) tasks on the CoNLL dataset. The main script is `main_script.py`.
 
