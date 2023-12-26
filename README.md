@@ -20,18 +20,24 @@ This project is a Python-based implementation of a Bi-directional Long Short Ter
 
 2. Ensure that you have Python and the necessary libraries installed. The project requires `torch`, `numpy`, `sklearn`, and `tqdm`.
 
-3. Download the CoNLL dataset and place it in the same directory as the project files.
+3. Download the CoNLL dataset and place it in the `data` folder in the root directory. The `data` folder should contain `train`, `test`, and `dev` files.
+
+4. Download and extract the Glove Embeddings and place it in the root directory. The file should be named `glove.6B.100d`.
 
 ## How to Run the Project
 
-1. Run the `main_script.py` file. This will train the BLSTM model on the CoNLL dataset and evaluate its performance.
+The `main_script.py` file can be run in two modes:
 
-2. To understand the project in detail, go through the `Walkthrough_Notebook.ipynb` file. You can open this file in Jupyter Notebook.
+1. `train`: This mode trains both vanilla BiLSTM and Glove BiLSTM from scratch. 
+    - Command: `python main_script.py train`
+    - Generates: `dev1.out`, `dev2.out`, `test1.out`, `test2.out`. In addition it makes `dev1_perl.out` and `dev2_perl.out` which can be fed to the conll03eval script.
 
-3. If you prefer an offline reference, you can use the `Walkthrough_PDF.pdf` file.
+2. `load`: To use this mode, `blstm1.pt` and `blstm2.pt` must be in the root directory.
+    - Command: `python main_script.py load`
+    - Generates: `dev1.out`, `dev2.out`, `test1.out`, `test2.out`. In addition it makes `dev1_perl.out` and `dev2_perl.out` which can be fed to the conll03eval script.
 
-4. For a detailed understanding of the NER task that this project aims to solve, refer to the `description.pdf` file.
+To understand the project in detail, go through the `Walkthrough_Notebook.ipynb` file. You can open this file in Jupyter Notebook.
 
-## Contact
+If you prefer an offline reference, you can use the `Walkthrough_PDF.pdf` file.
 
-For any queries or suggestions, please refer to the contact details provided in the `readme.txt` file.
+For a detailed understanding of the NER task that this project aims to solve, refer to the `description.pdf` file.
